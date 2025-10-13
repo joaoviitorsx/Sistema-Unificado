@@ -12,6 +12,7 @@ function createWindow() {
 
   win.loadURL('http://localhost:5173');
   win.removeMenu();
+  win.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
