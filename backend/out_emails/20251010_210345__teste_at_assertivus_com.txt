@@ -1,0 +1,7 @@
+Recuperação de senha - Assertivus
+
+    Seu código de recuperação é: 654321
+    Ele expira em 15 minutos.
+
+    Se você não solicitou essa recuperação, ignore este e-mail.
+    

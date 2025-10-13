@@ -1,0 +1,14 @@
+fastapi 
+uvicorn 
+python-multipart 
+pandas 
+lxml 
+openpyxl
+SQLAlchemy
+pymysql
+python-dotenv
+passlib
+aiosmtpd
+PyJWT
+email-validator
+bcrypt==4.0.1
