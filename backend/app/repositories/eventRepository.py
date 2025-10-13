@@ -1,6 +1,6 @@
+from typing import List
 from sqlalchemy.orm import Session
 from app.models.eventModel import Event
-from typing import List
 
 def createEvent(db: Session, userId: int, action: str, module: str):
     event = Event(userId=userId, action=action, module=module)

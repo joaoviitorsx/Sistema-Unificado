@@ -1,6 +1,6 @@
+from typing import List, Optional
 from sqlalchemy.orm import Session
 from ..models.profilesModel import Profile
-from typing import List, Optional
 
 def getAllProfiles(db: Session) -> List[Profile]:
     return db.query(Profile).all()
