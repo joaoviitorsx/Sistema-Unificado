@@ -46,7 +46,7 @@ CREATE TABLE events (
 -- ===========================================================
 CREATE TABLE companys (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    razaoSocial VARCHAR(150) NOT NULL UNIQUE,
+    razao_social VARCHAR(150) NOT NULL UNIQUE,
     cnpj VARCHAR(20) UNIQUE,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -57,7 +57,7 @@ CREATE TABLE companys (
 CREATE TABLE retrieve_users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
-    passToken VARCHAR(12) NOT NULL,
+    pass_token VARCHAR(12) NOT NULL,
     expiresIn DATETIME NOT NULL,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
