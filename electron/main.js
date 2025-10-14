@@ -3,8 +3,8 @@ const path = require('path');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1000,
-    height: 700,
+    width: 1280,
+    height: 920,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -12,7 +12,7 @@ function createWindow() {
 
   win.loadURL('http://localhost:5173');
   win.removeMenu();
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
