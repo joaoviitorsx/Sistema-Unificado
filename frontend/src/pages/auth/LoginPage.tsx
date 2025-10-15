@@ -19,7 +19,7 @@ export default function LoginPage() {
   const ilustracaoForm = () => {
     switch (step){
       case "login":
-        return "./src/assets/login.png";
+        return "./src/assets/login3.png";
       case "email":
         return "./src/assets/sendEmail.png";
       case "token":
@@ -51,28 +51,27 @@ export default function LoginPage() {
       <AuthSplitLayout
       left={
         <div className="flex flex-col items-center h-full justify-center relative">
-          <div className="absolute top-0">
-            <img src="/src/assets/empresa1.png" alt="Logo" className="w-56 object-contain" />
-          </div>
+        <div className="absolute top-5">
+          <img src="/src/assets/empresa.png" alt="Logo" className="w-80 object-contain" />
+        </div>
 
-          <div className="flex flex-1 items-center justify-center w-full overflow-hidden">
+        <div className="flex flex-1 items-center justify-center w-full overflow-hidden mt-12">
           <AnimatePresence mode="wait">
-            <motion.img
-              key={ilustracaoForm()}
-              src={ilustracaoForm()}
-              alt="Ilustração"
-              className="w-100 object-contain drop-shadow-lg"
-              initial={{ opacity: 0, y: 20, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.98 }}
-              transition={{
-                duration: 0.3,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            />
+          <motion.img
+            key={ilustracaoForm()}
+            src={ilustracaoForm()}
+            alt="Ilustração"
+            className="w-100 object-contain drop-shadow-lg mx-auto"
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.98 }}
+            transition={{
+            duration: 0.3,
+            ease: [0.22, 1, 0.36, 1],
+            }}
+          />
           </AnimatePresence>
         </div>
-          <div className="h-12" /> 
         </div>
       }
       right={<Card>{renderForm()}</Card>}
