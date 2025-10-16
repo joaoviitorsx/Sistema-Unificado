@@ -1,10 +1,12 @@
-import { useState } from 'react';
-import Login from './pages/auth/LoginPage';
+import AppRoutes from './routes/routes';
+import { BrowserRouter } from 'react-router';
 
 function App() {
   return (
-    Login()
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
-export default App
+export default App;

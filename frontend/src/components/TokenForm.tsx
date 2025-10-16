@@ -1,9 +1,9 @@
 import { useState } from "react";
-import InputOTP from "../../../components/InputOTP";
-import Button from "../../../components/Button";
-import Label from "../../../components/Label";
+import InputOTP from "./InputOTP";
+import Button from "./Button";
+import Label from "./Label";
 import { RotateCcw } from "lucide-react";
-import type { TokenFormProps } from "../../../types/layouts/auth/tokenForm";
+import type { TokenFormProps } from "../types/layouts/auth/tokenForm";
 
 export default function TokenForm({ onBack, onNext }: TokenFormProps) {
     const [otp, setOtp] = useState("");
@@ -49,37 +49,27 @@ export default function TokenForm({ onBack, onNext }: TokenFormProps) {
                         <p className="text-red-500 text-sm mt-2 text-center">{error}</p>
                     )}
                 </div>
-
-                <div className="flex flex-col items-center justify-center space-y-2 pt-4">
+                
+                <div className="flex flex-col items-center justify-center space-y-2 pt-4 m-auto w-64 p-4">
                     <p className="text-sm text-gray-600">Não recebeu o código?</p>
                     <button
                         type="button"
                         disabled={isResending}
-                        className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-semibold underline disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+                        className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 font-semibold underline disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
+                        onClick={() => {
+                            console.log("popoco medoin")
+                        }}
                     >
-                        <RotateCcw 
-                            size={14} 
-                            className={`mr-1 ${isResending ? 'animate-spin' : ''}`} 
-                        />
+                        <RotateCcw size={14} className={`mr-1 ${isResending ? 'animate-spin' : ''}`} />
                         {isResending ? 'Reenviando...' : 'Reenviar código'}
                     </button>
                 </div>
 
                 <div className="flex justify-between pt-6">
-                    <Button 
-                        type="button" 
-                        variant="secondary" 
-                        onClick={onBack} 
-                        className="cursor-pointer min-w-[100px]"
-                    >
+                    <Button type="button" variant="secondary" onClick={onBack} className="cursor-pointer min-w-[100px]">
                         Voltar
                     </Button>
-                    <Button 
-                        type="submit" 
-                        variant="primary" 
-                        className="cursor-pointer min-w-[100px]"
-                        disabled={otp.length < 6}
-                    >
+                    <Button type="submit" variant="primary" className="cursor-pointer min-w-[100px]" disabled={otp.length < 6}>
                         Confirmar
                     </Button>
                 </div>
