@@ -1,5 +1,4 @@
 import { useSearchParams } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
 
 import AuthBgLayout from "../../layouts/auth/AuthBgLayout";
 import AuthSplitLayout from "../../layouts/auth/AuthSplitLayout";
@@ -9,21 +8,26 @@ import LoginForm from "../../components/LoginForm";
 import SendEmailForm from "../../components/EmailForm";
 import TokenForm from "../../components/TokenForm";
 import ResetPasswordForm from "../../components/ResetPasswordForm";
+import AnimationImg from "../../components/AnimationImg";
 
 import useIlustracaoForm from "../../hooks/ilustrationHook";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LoginPage() {
-  const [content, setContent] = useState<"login" | "email" | "token" | "reset">("login");
   const [paramens, setParamens] = useSearchParams();
   const activeTabKey = paramens.get("page") || "login"
   const currentIllustration = useIlustracaoForm(activeTabKey);
+  const [content, setContent] = useState<"login" | "email" | "token" | "reset-password">(activeTabKey as any);
+
+  useEffect(() => {
+    setContent(activeTabKey as "login" | "email" | "token" | "reset-password")
+  }, [activeTabKey])
 
   const forms = {
     "login": <LoginForm onForgot={() => { setContent("email"); setParamens({ page: "email" }) }} />,
     "email": <SendEmailForm onBack={() => { setContent("login"); setParamens({ page: "login" })}} onNext={() => { setContent("token"); setParamens( {page: "token"})}} />,
-    "token": <TokenForm onBack={() => { setContent("email"); setParamens({page:"email"}) }} onNext={() => { setContent("reset"); setParamens({ page: "reset"})}} />,
-    "reset": <ResetPasswordForm onDone={() => { setContent("login"); setParamens("login")}} />,
+    "token": <TokenForm onBack={() => { setContent("email"); setParamens({page:"email"}) }} onNext={() => { setContent("reset-password"); setParamens({ page: "reset-password"})}} />,
+    "reset-password": <ResetPasswordForm onDone={() => { setContent("login"); setParamens("login")}} />,
   }
 
   return (
@@ -40,21 +44,12 @@ export default function LoginPage() {
             </div>
 
             <div className="flex flex-1 items-center justify-center w-full overflow-hidden mt-12">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={location.pathname}
+              <AnimationImg
+                  uniqueKey={activeTabKey}
                   src={currentIllustration}
                   alt="Ilustração"
                   className="w-90 object-contain drop-shadow-lg mx-auto"
-                  initial={{ opacity: 0, y: 20, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -20, scale: 0.98 }}
-                  transition={{
-                    duration: 0.3,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
                 />
-              </AnimatePresence>
             </div>
           </div>
         }

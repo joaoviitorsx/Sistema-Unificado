@@ -46,7 +46,7 @@ export default function LoginForm({ onForgot }: LoginFormProps) {
         </div>
 
         <div>
-          <Label htmlFor="password" className="font-bold text-base text-gray-700 mb-2 block">Senha</Label>
+          <Label htmlFor="password" className="font-semibold text-base text-gray-700 mb-2 block">Senha</Label>
           <div className="relative">
             <Input
               id="password"
