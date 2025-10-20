@@ -1,4 +1,4 @@
-import AppRoutes from './routes/routes';
+import AppRoutes from './routes/appRoute';
 import { BrowserRouter } from 'react-router';
 
 function App() {
