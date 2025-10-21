@@ -2,7 +2,7 @@ import { useSearchParams } from "react-router-dom";
 
 import AuthBgLayout from "../../layouts/auth/AuthBgLayout";
 import AuthSplitLayout from "../../layouts/auth/AuthSplitLayout";
-import Card from "../../components/Card";
+import { Card } from "antd";
 
 import LoginForm from "../../components/LoginForm";
 import SendEmailForm from "../../components/EmailForm";
@@ -54,7 +54,7 @@ export default function LoginPage() {
           </div>
         }
         right={
-          <Card>
+          <Card className="w-full max-w-md mx-auto">
             {forms[content]}
           </Card>
         }

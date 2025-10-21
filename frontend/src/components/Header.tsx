@@ -1,9 +1,10 @@
 import { Bell, TextAlignJustify } from "lucide-react";
 import type { HeaderProps } from "../types/components/header";
-import mockUser from "../mock/user";
+import { mockUser as user } from "../mock/user";
+// import mockUser from "../mock/user";
 
 function Header({ onMenuClick }: HeaderProps) {
-  const user = mockUser;
+  // const user = mockUser;
 
   return (
     <header className="flex items-center justify-between h-16 px-6 bg-white border-b border-gray-100">
@@ -19,8 +20,13 @@ function Header({ onMenuClick }: HeaderProps) {
         <div className="h-6 w-px bg-gray-300" />
 
         <div className="flex items-center space-x-3">
-          {user.avatar}
-          <span className="text-gray-700 font-medium">{user.name}</span>
+            {user.avatar}
+            <div className="flex flex-col">
+            <p className="text-sm font-medium text-gray-800">{user.name}</p>
+            <p className="text-xs text-gray-500" title={user.email}>
+              {user.email.length > 25 ? user.email.slice(0, 25) + "..." : user.email}
+            </p>
+            </div>
         </div>
       </div>
     </header>

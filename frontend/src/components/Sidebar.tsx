@@ -1,5 +1,5 @@
 import type { SidebarProps } from "../types/components/sidebar";
-import { LayoutDashboard, Zap, ChevronRight, LogOut, Truck  } from "lucide-react";
+import { LayoutDashboard, Zap, ChevronRight, LogOut, Truck, ShieldUser } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import icone from "../assets/icone.png";
 
@@ -7,6 +7,7 @@ const menuItems: { icon: React.ElementType; label: string; key: string; path: st
   { icon: LayoutDashboard, label: "Dashboard", key: "dashboard", path: "/dashboard" },
   { icon: Zap, label: "Automatização", key: "modulos", path: "/modulos" },
   { icon: Truck, label: "Fornecedores", key: "fornecedores", path: "/fornecedores" },
+  { icon: ShieldUser, label: "Painel Administrativo", key: "administracao", path: "/administracao" },
 ];
 
 function Sidebar({ isOpen }: SidebarProps) {

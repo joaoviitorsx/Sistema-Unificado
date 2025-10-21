@@ -1,19 +1,23 @@
 import { Card, Input, Tooltip } from "antd";
 import MainLayout from "../../layouts/MainLayout";
 import Label from "../../components/Label";
-import { User, FileSpreadsheet, Search } from "lucide-react";
+import { FileSpreadsheet, Search } from "lucide-react";
+import { MockFornecedor } from "../../mock/for";
+import { useState } from "react";
+import CardFornecedor from "../../components/cardFornecedor";
 
 function FornecedorPage() {
+    const [showCard, setShowCard] = useState(false);
+    const handleSearch = () => {
+        setShowCard(true);
+    };
+
     return (
         <MainLayout>
             <div className="max-w-auto">
                 <header className="mb-8">
-                    <h1 className="text-3xl font-bold text-gray-800 tracking-tight">
-                        Consulta de Fornecedor
-                    </h1>
-                    <p className="text-gray-500 text-base mt-2">
-                        Consulte os dados fiscais utilizando o CNPJ do fornecedor
-                    </p>
+                    <h1 className="text-3xl font-bold text-gray-800 tracking-tight">Consulta de Fornecedor</h1>
+                    <p className="text-gray-500 text-base mt-2">Consulte os dados fiscais utilizando o CNPJ do fornecedor</p>
                 </header>
 
                 <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 rounded-xl">
@@ -42,11 +46,12 @@ function FornecedorPage() {
                                         id="CNPJ"
                                         size="large"
                                         placeholder="Digite o CNPJ do fornecedor"
-                                        prefix={<User className="text-gray-400 mr-2" size={18} />}
+                                        prefix={<Search className="text-gray-400 mr-2" size={18} />}
                                         className="rounded-lg"
                                     />
                                 </div>
-                                <button className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-2.5 rounded-lg shadow-sm hover:bg-green-700 transition-colors duration-200 font-medium text-sm h-[40px] cursor-pointer">
+                                <button className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-2.5 rounded-lg shadow-sm hover:bg-green-700 transition-colors duration-200 font-medium text-sm h-[40px] cursor-pointer"
+                                onClick={handleSearch}>
                                     <Search size={18} />
                                     Pesquisar
                                 </button>
@@ -54,6 +59,11 @@ function FornecedorPage() {
                         </div>
                     </div>
                 </Card>
+                {showCard && (
+                    <div className="mt-6">
+                        <CardFornecedor fornecedor={MockFornecedor}/>
+                    </div>
+                )}
             </div>
         </MainLayout>
     );
