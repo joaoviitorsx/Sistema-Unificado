@@ -42,7 +42,6 @@ function ModulosPage() {
   return (
     <MainLayout>
       <div className="space-y-8">
-        {/* Header */}
         <header>
           <h1 className="text-3xl font-bold text-gray-800 tracking-tight">
             Módulos de Automação
@@ -52,7 +51,6 @@ function ModulosPage() {
           </p>
         </header>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {modulos.map((modulo) => {
             const Icon = modulo.icon;
