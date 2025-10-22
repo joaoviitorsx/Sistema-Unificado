@@ -1,43 +1,11 @@
 import { Card } from "antd";
 import { useNavigate } from "react-router-dom";
-import { FileText, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import MainLayout from "../../layouts/MainLayout";
+import { modulos } from "../../mock/modulos";
 
 function ModulosPage() {
   const navigate = useNavigate();
-
-  const modulos = [
-    {
-      title: "Extrator NF-e",
-      description: "Extração de dados de notas fiscais eletrônicas (NF-e).",
-      path: "/modulos/extrator-xml",
-      icon: FileText,
-    },
-    {
-      title: "Extrator CF-e",
-      description: "Extração de dados de cupons fiscais eletrônicos (CF-e).",
-      path: "/modulos/extrator-cfe",
-      icon: FileText,
-    },
-    {
-      title: "Extrator SPED/COFINS",
-      description: "Extração de dados de arquivos SPED.",
-      path: "/modulos/extrator-sped-cofins",
-      icon: FileText,
-    },
-    {
-      title: "Apurador ICMS",
-      description: "Apuração de ICMS a partir de Sped Fiscal.",
-      path: "/modulos/apurador-icms",
-      icon: FileText,
-    },
-    {
-      title: "Exportação Fortes Fiscal",
-      description:"Converte Sped Fiscal para o formato Fortes Fiscal.",
-      path: "/modulos/fortes-fiscal",
-      icon: FileText,
-    },
-  ];
 
   return (
     <MainLayout>

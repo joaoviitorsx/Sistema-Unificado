@@ -6,6 +6,7 @@ import ModulosPage from '../pages/modulos/index';
 import FornecedoresPage from '../pages/fornecedor/index';
 import NotFoundPage from '../pages/notFound';
 import adminPage from '../pages/admin';
+import EmpresasPage from '../pages/empresas';
 
 function AppRoutes() {
   return (
@@ -15,6 +16,7 @@ function AppRoutes() {
         <Route path="/modulos" element={<CustomChild Child={ModulosPage}/>}/>
         <Route path="/fornecedores" element={<CustomChild Child={FornecedoresPage}/>}/>
         <Route path="/administracao" element={<CustomChild Child={adminPage}/>}></Route>
+        <Route path="/empresas" element={<CustomChild Child={EmpresasPage}/>}></Route>
         <Route path="*" element={<CustomChild Child={NotFoundPage}/>} />
     </Routes>
   );

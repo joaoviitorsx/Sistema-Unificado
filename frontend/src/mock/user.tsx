@@ -20,41 +20,33 @@ export const mockUser = {
 export const usuarios = [
   {
     id: 1,
-    nome: "Joao Vitor",
-    email: "joao@assertivus.com",
+    nome: "Pessoa 1",
+    email: "pessoa1@assertivus.com",
     cargo: "Estagiario",
-    empresa: "Administrador",
-    empresas: "Realize Software",
     status: "Ativo",
     ultimoAcesso: "2024-06-10 14:23",
   },
   {
     id: 2,
-    nome: "Victor Bernado",
-    email: "vitin@assertivus.com",
+    nome: "Pessoa 2",
+    email: "pessoa2@assertivus.com",
     cargo: "Estagiario",
-    empresa: "Administrador",
-    empresas: "Realize Software",
     status: "Ativo",
     ultimoAcesso: "2024-06-10 14:23",
   },
   {
     id: 3,
-    nome: "Gabriel Novais",
-    email: "gaybriel@assertivus.com",
+    nome: "Pessoa 3",
+    email: "pessoa3@assertivus.com",
     cargo: "Estagiario",
-    empresa: "Administrador",
-    empresas: "Realize Software",
     status: "Ativo",
     ultimoAcesso: "2024-06-10 14:23",
   },
   {
     id: 4,
-    nome: "Andin",
-    email: "andin@assertivus.com",
+    nome: "Pessoa 4",
+    email: "pessoa4@assertivus.com",
     cargo: "Estagiario",
-    empresa: "Administrador",
-    empresas: "Realize Software",
     status: "Ativo",
     ultimoAcesso: "2024-06-10 14:23",
   },
@@ -68,14 +60,27 @@ export const modulos = [
     analista: true,
   },
   { 
-    nome: "Empresas", 
+    nome: "Automatizações", 
     admin: true, 
     contador: true, 
     analista: false 
-},
+  },
   { 
-    nome: "Produtos", 
+    nome: "Fornecedores", 
     admin: true, 
     contador: true, 
-    analista: true },
+    analista: true 
+  },
+  { 
+    nome: "Empresas", 
+    admin: true, 
+    contador: true, 
+    analista: true 
+  },
+  { 
+    nome: "Painel Administrativo", 
+    admin: true, 
+    contador: true, 
+    analista: true 
+  },
 ];

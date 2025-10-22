@@ -2,8 +2,8 @@ import { useState } from "react";
 import MainLayout from "../../layouts/MainLayout";
 import { UserCog, Lock } from "lucide-react";
 import Tabs from "../../components/Tabs";
-import UsersTab from "../../components/UsersTab";
-import PermissionsTab from "../../components/PermissionsTab";
+import UsersTab from "../../components/tab/UsersTab";
+import PermissionsTab from "../../components/tab/PermissionsTab";
 
 function AdminPage() {
   const [activeTab, setActiveTab] = useState("users");
@@ -36,6 +36,7 @@ function AdminPage() {
           {activeTab === "permissions" && <PermissionsTab />}
         </div>
       </div>
+
     </MainLayout>
   );
 }

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import InputOTP from "./InputOTP";
-import Button from "./Button";
-import Label from "./Label";
+import InputOTP from "../InputOTP";
+import Button from "../Button";
+import Label from "../Label";
 import { RotateCcw } from "lucide-react";
-import type { TokenFormProps } from "../types/layouts/auth/tokenForm";
+import type { TokenFormProps } from "../../types/layouts/auth/tokenForm";
 
 export default function TokenForm({ onBack, onNext }: TokenFormProps) {
     const [otp, setOtp] = useState("");

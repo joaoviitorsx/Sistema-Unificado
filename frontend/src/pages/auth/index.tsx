@@ -4,10 +4,10 @@ import AuthBgLayout from "../../layouts/auth/AuthBgLayout";
 import AuthSplitLayout from "../../layouts/auth/AuthSplitLayout";
 import { Card } from "antd";
 
-import LoginForm from "../../components/LoginForm";
-import SendEmailForm from "../../components/EmailForm";
-import TokenForm from "../../components/TokenForm";
-import ResetPasswordForm from "../../components/ResetPasswordForm";
+import LoginForm from "../../components/form/LoginForm";
+import SendEmailForm from "../../components/form/EmailForm";
+import TokenForm from "../../components/form/TokenForm";
+import ResetPasswordForm from "../../components/form/ResetPasswordForm";
 import AnimationImg from "../../components/AnimationImg";
 
 import useIlustracaoForm from "../../hooks/ilustrationHook";

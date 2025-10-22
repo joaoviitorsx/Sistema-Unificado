@@ -15,7 +15,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
           <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
         </div>
 
-        <div className="mt-[64px] flex-1 p-6">
+        <div className="mt-[64px] flex-1 p-6 overflow-auto" style={{ backgroundColor: "#f0f0f0ff" }}>
           <main className="w-full h-full">{children}</main>
         </div>
       </div>

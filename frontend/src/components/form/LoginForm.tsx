@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Input from "./Input";
-import Button from "./Button";
-import Label from "./Label";
-import Checkbox from "./Checkbox";
+import Input from "../Input";
+import Button from "../Button";
+import Label from "../Label";
+import Checkbox from "../Checkbox";
 import { User, Lock, Eye, EyeOff } from "lucide-react";
-import type { LoginFormProps } from "../types/layouts/auth/loginForm";
+import type { LoginFormProps } from "../../types/layouts/auth/loginForm";
 
 export default function LoginForm({ onForgot }: LoginFormProps) {
   const [showPassword, setShowPassword] = useState(false);

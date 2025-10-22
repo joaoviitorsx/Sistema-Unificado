@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Input from "./Input";
-import Button from "./Button";
-import Label from "./Label";
+import Input from "../Input";
+import Button from "../Button";
+import Label from "../Label";
 import { Eye, EyeOff } from "lucide-react";
-import type { ResetPasswordFormProps } from "../types/layouts/auth/resetPasswordForm";
+import type { ResetPasswordFormProps } from "../../types/layouts/auth/resetPasswordForm";
 
 export default function ResetPasswordForm({ onDone }: ResetPasswordFormProps) {
   const [showNewPassword, setShowNewPassword] = useState(false);
