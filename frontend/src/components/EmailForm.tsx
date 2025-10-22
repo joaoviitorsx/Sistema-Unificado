@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Input from "../../../components/Input";
-import Button from "../../../components/Button";
-import Label from "../../../components/Label";
+import Input from "./Input";
+import Button from "./Button";
+import Label from "./Label";
 import { Mail } from "lucide-react";
-import type { EmailFormProps } from "../../../types/layouts/auth/emailForm";
+import type { EmailFormProps } from "../types/layouts/auth/emailForm";
 
 export default function SendEmailForm({ onBack, onNext }: EmailFormProps) {
   const [email, setEmail] = useState("");
@@ -13,7 +13,6 @@ export default function SendEmailForm({ onBack, onNext }: EmailFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validação básica de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
       setError("Email é obrigatório");

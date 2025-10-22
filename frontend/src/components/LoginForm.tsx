@@ -1,16 +1,24 @@
 import { useState } from "react";
-import Input from "../../../components/Input";
-import Button from "../../../components/Button";
-import Label from "../../../components/Label";
-import Checkbox from "../../../components/Checkbox";
+import { useNavigate } from "react-router-dom";
+import Input from "./Input";
+import Button from "./Button";
+import Label from "./Label";
+import Checkbox from "./Checkbox";
 import { User, Lock, Eye, EyeOff } from "lucide-react";
-import type { LoginFormProps } from "../../../types/layouts/auth/loginForm";
+import type { LoginFormProps } from "../types/layouts/auth/loginForm";
 
 export default function LoginForm({ onForgot }: LoginFormProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate('/dashboard');
+  }
 
   return (
     <>
@@ -38,9 +46,7 @@ export default function LoginForm({ onForgot }: LoginFormProps) {
         </div>
 
         <div>
-          <Label htmlFor="password" className="font-semibold text-base text-gray-700 mb-2 block">
-            Senha
-          </Label>
+          <Label htmlFor="password" className="font-semibold text-base text-gray-700 mb-2 block">Senha</Label>
           <div className="relative">
             <Input
               id="password"
@@ -51,11 +57,7 @@ export default function LoginForm({ onForgot }: LoginFormProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700 cursor-pointer transition-colors duration-200"
-            >
+            <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700 cursor-pointer transition-colors duration-200">
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
           </div>
@@ -71,11 +73,7 @@ export default function LoginForm({ onForgot }: LoginFormProps) {
         </div>
 
         <div className="flex justify-center pt-6">
-          <Button 
-            type="submit"
-            className="w-full max-w-xs h-10 cursor-pointer bg-[#7499C3] hover:bg-[#1359bbff] transition-colors duration-200"
-            disabled={!username || !password}
-          >
+          <Button type="submit" className="w-full max-w-xs h-10 cursor-pointer bg-[#7499C3] hover:bg-[#1359bbff] transition-colors duration-200" disabled={!username || !password} onClick={handleSubmit}>
             Entrar
           </Button>
         </div>
